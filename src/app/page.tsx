@@ -19,9 +19,14 @@ export default function Home() {
               <Image src="search.svg" width={17} height={17} alt="Search icon"/>
             </button>
           </div>
-          <CardContainer>
-            <CardTitle>Título</CardTitle>
-          </CardContainer>
+          <div className="flex flex-col gap-y-4">
+            <CardContainer>
+              <CardTitle>Título</CardTitle>
+            </CardContainer>
+            <CardContainer>
+              <CardTitle>Título</CardTitle>
+            </CardContainer>
+          </div>
         </div>
       </main>
     </div>
