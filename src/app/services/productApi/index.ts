@@ -21,4 +21,12 @@ const createProduct = async (name: string): Promise<ProductType> => {
     }
 }
 
-export { getAllProducts, createProduct };
+const deleteProduct = async (id: number) => {
+    try {
+        axios.delete(`/product/${id}`);
+    } catch (error) {
+        throw new Error (`Falha ao excluir o produto: ${error}`);
+    }
+}
+
+export { getAllProducts, createProduct, deleteProduct };

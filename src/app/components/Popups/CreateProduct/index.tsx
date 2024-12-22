@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { createProduct } from "@/app/services/productApi/";
-import { Products } from "./types";
 
-export function PopUp ({ products }: Products) {
+export function PopUp () {
     const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
     const [productName, setProductName] = useState<string>("");
 
@@ -16,7 +15,6 @@ export function PopUp ({ products }: Products) {
     const createNewProduct = async () => {
         try {
             const newProduct = await createProduct(productName);
-            products.push(newProduct)
         } catch (error) {
             throw new Error(`Falha ao criar um novo produto: ${error}`)
         }

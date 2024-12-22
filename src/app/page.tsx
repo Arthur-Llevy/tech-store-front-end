@@ -26,12 +26,12 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-y-4">
             {products.map((product: ProductType) => (
-              <CardContainer key={product.id}>
+              <CardContainer key={product.id} id={product.id}>
                 <CardTitle>{product.name}</CardTitle>
               </CardContainer>
             ))}
           </div>
-          <PopUp products={products} />
+          <PopUp/>
         </div>
       </main>
     </div>
