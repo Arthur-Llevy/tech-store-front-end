@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      margin: {
+        "80vw": "80vw",
+        "80vh": "80vh",
+      }
     },
   },
   plugins: [],

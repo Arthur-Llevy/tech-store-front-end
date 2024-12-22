@@ -1,18 +1,18 @@
 import { Header } from "./components/Header";
 import { CardContainer, CardTitle } from "./components/Card";
 import Image from "next/image";
-import axios from "axios";
 import type { ProductType } from "./types";
+import { PopUp } from "./components/Popups/CreateProduct";
+import { getAllProducts } from "./services/productApi";
 
 export default async function Home() {
-  const response = await axios.get('http://localhost:5062/product');
-  const products = response.data;
+  const products = await getAllProducts();
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full h-screen bg-white relative">
       <Header />
       <main>
-        <div className="flex flex-col">
+        <div className="flex flex-col h-screen">
           <div className="w-80 border radius-sm flex items-center justify-between mx-auto my-8">
             <input 
               placeholder="Ex.: memória ram"
@@ -31,6 +31,7 @@ export default async function Home() {
               </CardContainer>
             ))}
           </div>
+          <PopUp products={products} />
         </div>
       </main>
     </div>
