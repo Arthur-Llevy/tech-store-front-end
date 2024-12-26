@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { ProductType } from "./types"; 
 
 axios.defaults.baseURL = "http://localhost:5062";

@@ -14,7 +14,8 @@ export function PopUp () {
 
     const createNewProduct = async () => {
         try {
-            const newProduct = await createProduct(productName);
+            await createProduct(productName);
+            location.reload();
         } catch (error) {
             throw new Error(`Falha ao criar um novo produto: ${error}`)
         }

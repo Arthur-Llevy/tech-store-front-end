@@ -5,10 +5,14 @@ import { deleteProduct } from "@/app/services/productApi";
 
 export function CardContainer ({ children, id }: { children: React.ReactNode, id: number }) {
     const handleDelete = async () => {
-        try {
-            await deleteProduct(id);
-        } catch (error) {
-            throw new Error(`${error}`);
+        const confirm: boolean = window.confirm("Tem certeza que deseja excluir este produto?");
+
+        if (confirm) {
+            try {
+                await deleteProduct(id);
+            } catch (error) {
+                throw new Error(`${error}`);
+            }
         }
     }
     
